@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D365 Form Tracking POC - Home</title>
+  <style>
+    body {
+      font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.4rem; }
+    .note {
+      background: #fff8e1;
+      border: 1px solid #f0d878;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+    ul.forms {
+      list-style: none;
+      padding: 0;
+    }
+    ul.forms li {
+      margin-bottom: 10px;
+    }
+    ul.forms a {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #222;
+      min-width: 160px;
+    }
+    ul.forms a:hover {
+      background: #f5f5f5;
+    }
+    .pending {
+      color: #999;
+      font-style: italic;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>D365 Form Tracking POC &mdash; Home</h1>
+
+  <div class="note">
+    <strong>Test flow:</strong> Submit exactly one form first (that's what
+    identifies you as a known contact), then come back here and click through
+    to visit the others &mdash; don't submit those. Stay in the same browser
+    the whole time. Afterward, check the contact's Insights tab for multiple
+    entries under "Website and form insights."
+  </div>
+
+  <ul class="forms">
+    <li><a href="/form1.html">Form 1</a></li>
+    <li><a href="/form2.html">Form 2</a></li>
+    <li><a href="/form3.html">Form 3</a></li>
+  </ul>
+
+</body>
+</html>

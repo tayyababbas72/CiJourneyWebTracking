@@ -1,0 +1,11 @@
+{
+  "name": "FormTrackingPoc",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "forwardPorts": [5000],
+  "portsAttributes": {
+    "5000": {
+      "label": "FormTrackingPoc",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
