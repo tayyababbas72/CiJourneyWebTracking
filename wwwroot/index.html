@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>D365 Form Tracking POC</title>
+  <title>D365 Form Tracking POC - Home</title>
   <style>
     body {
       font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -11,7 +11,7 @@
       margin: 40px auto;
       padding: 0 20px;
       color: #222;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     h1 { font-size: 1.4rem; }
     .note {
@@ -20,70 +20,51 @@
       border-radius: 6px;
       padding: 12px 16px;
       font-size: 0.92rem;
+      margin-bottom: 24px;
     }
-    .form-slot {
-      margin-top: 28px;
-      padding: 20px;
-      border: 2px dashed #999;
-      border-radius: 8px;
-      min-height: 120px;
+    ul.forms {
+      list-style: none;
+      padding: 0;
     }
-    footer {
-      margin-top: 40px;
-      font-size: 0.8rem;
-      color: #777;
-      border-top: 1px solid #eee;
-      padding-top: 12px;
+    ul.forms li {
+      margin-bottom: 10px;
     }
-    code { background: #f2f2f2; padding: 2px 5px; border-radius: 4px; }
+    ul.forms a {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #222;
+      min-width: 160px;
+    }
+    ul.forms a:hover {
+      background: #f5f5f5;
+    }
+    .pending {
+      color: #999;
+      font-style: italic;
+      padding: 10px 0;
+    }
   </style>
 </head>
 <body>
 
-  <h1>D365 Customer Insights - Journeys form tracking POC</h1>
-
-  <p>
-    This page is a blank slate for testing whether a <strong>form visit</strong>
-    (no submission) shows up in D365 as its own tracked event, separate from a
-    <strong>form submission</strong>.
-  </p>
+  <h1>D365 Form Tracking POC &mdash; Home</h1>
 
   <div class="note">
-    Serve this over the <strong>ngrok/tunnel URL</strong>, not
-    <code>http://localhost</code>, when you actually test against D365 &mdash;
-    D365 needs a real allow-listed domain to render/track the form against.
+    <strong>Test flow:</strong> Submit exactly one form first (that's what
+    identifies you as a known contact), then come back here and click through
+    to visit the others &mdash; don't submit those. Stay in the same browser
+    the whole time. Afterward, check the contact's Insights tab for multiple
+    entries under "Website and form insights."
   </div>
 
-  <!--
-    ============================================================
-     PASTE YOUR D365 FORM EMBED CODE BELOW, INSIDE form-slot DIV
-    ============================================================
-
-    Go to your marketing form in D365 > Form hosting tab > select
-    your form page > Get the code.
-
-    - "Script" embed: tracks the form AND clicks on this page.
-    - "iFrame" embed: tracks the form only, page stays isolated.
-
-    Paste whichever one you're testing directly below this comment,
-    replacing the placeholder <p> tag inside form-slot.
-  -->
-  <div id="form-slot" class="form-slot">
-<div
-        data-form-id='918ad999-069b-f111-b8db-7ced8d425d69'
-        data-form-api-url='https://public-eur.mkt.dynamics.com/api/v1.0/orgs/972c4994-0ce5-ee11-9048-000d3ad88e54/landingpageforms'
-        data-cached-form-url='https://assets-eur.mkt.dynamics.com/972c4994-0ce5-ee11-9048-000d3ad88e54/digitalassets/forms/918ad999-069b-f111-b8db-7ced8d425d69' ></div>
-        <script src = 'https://formui-usa1.mkt.dynamics.com/eur/FormLoader/FormLoader.bundle.js' ></script>
-  </div>
-
-  <footer>
-    Page loaded at <span id="load-time"></span>. Reload this page (without
-    submitting the form) to generate a fresh "visit" for testing.
-  </footer>
-
-  <script>
-    document.getElementById('load-time').textContent = new Date().toLocaleString();
-  </script>
+  <ul class="forms">
+    <li><a href="/form1.html">Form 1</a></li>
+    <li><a href="/form2.html">Form 2</a></li>
+    <li><a href="/form3.html">Form 3</a></li>
+  </ul>
 
 </body>
 </html>
