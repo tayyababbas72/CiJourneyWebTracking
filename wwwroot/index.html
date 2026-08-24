@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D365 Form Tracking POC</title>
+  <style>
+    body {
+      font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.4rem; }
+    .note {
+      background: #fff8e1;
+      border: 1px solid #f0d878;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 0.92rem;
+    }
+    .form-slot {
+      margin-top: 28px;
+      padding: 20px;
+      border: 2px dashed #999;
+      border-radius: 8px;
+      min-height: 120px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #777;
+      border-top: 1px solid #eee;
+      padding-top: 12px;
+    }
+    code { background: #f2f2f2; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>D365 Customer Insights - Journeys form tracking POC</h1>
+
+  <p>
+    This page is a blank slate for testing whether a <strong>form visit</strong>
+    (no submission) shows up in D365 as its own tracked event, separate from a
+    <strong>form submission</strong>.
+  </p>
+
+  <div class="note">
+    Serve this over the <strong>ngrok/tunnel URL</strong>, not
+    <code>http://localhost</code>, when you actually test against D365 &mdash;
+    D365 needs a real allow-listed domain to render/track the form against.
+  </div>
+
+  <!--
+    ============================================================
+     PASTE YOUR D365 FORM EMBED CODE BELOW, INSIDE form-slot DIV
+    ============================================================
+
+    Go to your marketing form in D365 > Form hosting tab > select
+    your form page > Get the code.
+
+    - "Script" embed: tracks the form AND clicks on this page.
+    - "iFrame" embed: tracks the form only, page stays isolated.
+
+    Paste whichever one you're testing directly below this comment,
+    replacing the placeholder <p> tag inside form-slot.
+  -->
+  <div id="form-slot" class="form-slot">
+    <div
+      data-form-id='7bcc4d64-d39a-f111-b8db-7ced8d425d69'
+      data-form-api-url='https://public-eur.mkt.dynamics.com/api/v1.0/orgs/972c4994-0ce5-ee11-9048-000d3ad88e54/landingpageforms'
+      data-cached-form-url='https://assets-eur.mkt.dynamics.com/972c4994-0ce5-ee11-9048-000d3ad88e54/digitalassets/forms/7bcc4d64-d39a-f111-b8db-7ced8d425d69'></div>
+    <script src='https://formui-usa1.mkt.dynamics.com/eur/FormLoader/FormLoader.bundle.js'></script>
+  </div>
+
+  <footer>
+    Page loaded at <span id="load-time"></span>. Reload this page (without
+    submitting the form) to generate a fresh "visit" for testing.
+  </footer>
+
+  <script>
+    document.getElementById('load-time').textContent = new Date().toLocaleString();
+  </script>
+
+</body>
+</html>
