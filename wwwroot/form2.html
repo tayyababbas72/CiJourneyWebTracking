@@ -37,6 +37,25 @@
     }
     code { background: #f2f2f2; padding: 2px 5px; border-radius: 4px; }
   </style>
+<script>
+        (function (a, t, i) { var e = "MSCI"; var s = "Analytics"; var o = e + "queue"; a[o] = a[o] || []; var r = a[e] || function (n) { var t = {}; t[s] = {}; function e(e) { while (e.length) { var r = e.pop(); t[s][r] = function (e) { return function () { a[o].push([e, n, arguments]) } }(r) } } var r = "track"; var i = "set"; e([r + "Event", r + "View", r + "Action", i + "Config", i + "Property", i + "User", "initialize", "teardown"]); return t }(i.name); var n = i.name; if (!a[e]) { a[n] = r[s]; a[o].push(["new", n]); setTimeout(function () { var e = "script"; var r = t.createElement(e); r.async = 1; r.src = i.src; var n = t.getElementsByTagName(e)[0]; n.parentNode.insertBefore(r, n) }, 1) } else { a[n] = new r[s] } if (i.user) { a[n].setUser(i.user) } if (i.props) { for (var c in i.props) { a[n].setProperty(c, i.props[c]) } } a[n].initialize(i.cfg) })(window, document, {
+            src: "https://rdrect-eur1.mkt.dynamics.com/webtracking/WebTracking/WebTracking.bundle.js",
+            name: "MSCI",
+            cfg: {
+                ingestionKey: "5f85e3d0ec5e4bac874dc65b91fc2c09-7987ab61-adbc-4fa0-9ef4-3dfe962f6a18-7267",
+                endpointUrl: "https://mobile.events.data.microsoft.com/OneCollector/1.0/",
+                autoCapture: {
+                    view: true,
+                    click: true
+                },
+                orgInfo: {
+                    orgId: "972c4994-0ce5-ee11-9048-000d3ad88e54",
+                    orgTenantId: "def44f5f-0783-4b05-8f2f-dd615c5dfec4",
+                    orgGeo: "EUR"
+                }
+            }
+        });
+  </script>
 </head>
 <body>
 
